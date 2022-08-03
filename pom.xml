@@ -8,22 +8,6 @@
     <artifactId>Tuli</artifactId>
     <version>1.0.0</version>
 
-    <repositories>
-        <repository>
-            <id>kenzie</id>
-            <name>Kenzie's Repository</name>
-            <url>https://repo.kenzie.mx/releases</url>
-        </repository>
-    </repositories>
-
-    <dependencies>
-        <dependency>
-            <groupId>mx.kenzie</groupId>
-            <artifactId>mirror</artifactId>
-            <version>5.0.4</version>
-        </dependency>
-    </dependencies>
-
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
