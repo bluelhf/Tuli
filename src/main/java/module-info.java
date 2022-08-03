@@ -4,5 +4,4 @@ module blue.lhf.tuli {
 
     requires java.instrument;
     requires jdk.attach;
-    requires mirror;
 }
