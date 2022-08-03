@@ -9,7 +9,6 @@ import static blue.lhf.tuli.api.Modules.javaBase;
 import static java.lang.invoke.MethodHandles.lookup;
 import static java.lang.invoke.MethodType.methodType;
 import static java.util.concurrent.TimeUnit.SECONDS;
-import static org.joor.Reflect.onClass;
 
 public class TuliTest {
     private static final String UNSAFE_NAME = "jdk.internal.misc.Unsafe";
