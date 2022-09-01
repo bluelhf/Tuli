@@ -26,8 +26,7 @@ traditional methods of JVM privilege escalation do not work.
 ```java
 System.err.printf("Currently in %s%n", currentModule());
 
-Tuli.open(javaBase(), currentModule(),
-module("org.jooq.joor"));
+Tuli.open(javaBase(), currentModule(), module("org.jooq.joor"));
 
 Reflect.onClass("jdk.internal.misc.Unsafe")
         .call("getUnsafe")
@@ -44,7 +43,7 @@ Currently in module blue.lhf.tuli
 
 ### [Mirror](https://github.com/Moderocky/Mirror) on Tuli
 <sub>(This demonstration does not seg-fault,
-because [as of 2022-08-03], Mirror does not support
+because [as of 2022-09-01], Mirror does not support
 long/double parameters in its method accessors)</sub>
 ```java
 System.err.printf("Currently in %s%n", currentModule());
