@@ -2,19 +2,31 @@ package blue.lhf.tuli.api;
 
 import static java.lang.StackWalker.Option.RETAIN_CLASS_REFERENCE;
 
+/**
+ * Utility class for obtaining modules to open.
+ * */
 public class Modules {
     private Modules() {
     }
 
+    /**
+     * @return The module of the caller class. Uses {@link StackWalker}.
+     * */
     public static Module currentModule() {
         return StackWalker.getInstance(RETAIN_CLASS_REFERENCE)
             .getCallerClass().getModule();
     }
 
+    /**
+     * @return The <i>java.base</i> module, more specifically the module of the {@link Object} class.
+     * */
     public static Module javaBase() {
         return Object.class.getModule();
     }
 
+    /**
+     * @return The module of the class that the given object is an instance of.
+     * */
     public static <T> Module moduleOf(final T object) {
         return object.getClass().getModule();
     }
