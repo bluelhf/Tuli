@@ -1,6 +1,7 @@
 package blue.lhf.tuli;
 
 import blue.lhf.tuli.api.*;
+import blue.lhf.tuli.impl.SneakyDevil;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -13,19 +14,19 @@ import static java.util.concurrent.TimeUnit.SECONDS;
 public class TuliTest {
     private static final String UNSAFE_NAME = "jdk.internal.misc.Unsafe";
 
+    // Disabled because the test system runs in the wrong module, which is acceptable for now.
     public void disabledTestModule() {
         assert "blue.lhf.tuli.test".equals(getClass().getModule().getName()):
             "Tests are running in the wrong module!";
     }
 
     public final void testInstrumentation() {
-        final CompletableFuture<?> future; (future = Tuli.instrument().orTimeout(5, SECONDS)).join();
+        final CompletableFuture<?> future; (future = SneakyDevil.instrument().orTimeout(5, SECONDS)).join();
         assert !future.isCompletedExceptionally() : "Instrumentation timed out.";
-        assert Tuli.isInstrumented() : "Instrumentation failed.";
+        assert SneakyDevil.isInstrumented() : "Instrumentation failed.";
     }
 
     public final void testAccess() {
-        Tuli.instrument().join();
         Tuli.open(javaBase(), currentModule());
 
         try {
