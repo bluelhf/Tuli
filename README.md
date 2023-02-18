@@ -15,7 +15,7 @@ traditional methods of JVM privilege escalation do not work.
 ## Requirements
 - The running JVM must be capable of **[instrumentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.instrument/java/lang/instrument/package-summary.html)**
 - The filesystem must be capable of creating temporary directories and files in them
-  for Tuli can actually write and load its agent
+  for Tuli to actually write and load its agent
 - The Java process must have sufficient privileges to spawn at least one other
   Java process with the same executable file as the initial process
 - Java 17+
