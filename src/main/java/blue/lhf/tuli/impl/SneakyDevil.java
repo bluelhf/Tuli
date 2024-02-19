@@ -64,7 +64,7 @@ public class SneakyDevil {
 
 
         // SneakyDevil and its non-Java SE dependencies
-        final Class<?>[] toWrite = new Class[]{Tuli.class, SneakyDevil.class};
+        final Class<?>[] toWrite = new Class[]{Tuli.class, SneakyDevil.class, InstrumentException.class};
 
         try (final JarOutputStream out = new JarOutputStream(Files.newOutputStream(target), manifest)) {
             for (final Class<?> clazz : toWrite) {
